@@ -1,0 +1,740 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: #171616;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  transition: all 1s ease-in-out;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  background-color: black;
+}
+::-webkit-scrollbar-thumb{
+  background-color: sienna;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+  a {
+    text-decoration: none;
+    transition: all .5s ease-in-out;
+    color: white;
+  }
+  a:hover {
+    opacity: .5;
+  }
+  ul {
+    list-style-type: none;
+  }
+  
+/* navbar */
+.navbarSection {
+
+  height: 80px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: 9999;
+  transition: all .5s ease-in-out;
+}
+.navbarScrollBlack {
+  background-color: #171616;
+}
+.navbarScrollWhite {
+  background-color: white;
+}
+.navbarSection .rightSection, .navbarSection .leftSection {
+  display: flex;
+  align-items: center;
+}
+.navbarSection .rightSection {
+  justify-content: space-around;
+  width: 40%;
+}
+.navbarSection .leftSection {
+  justify-content: space-around;
+
+  width: 20%;
+}
+.naveLogo {
+  font-size: 50px;
+}
+.navbarSection .rightSection ul li {
+  display: inline-block;
+  margin-right: 50px;
+}
+.rightSection .navLink {
+  font-size: 20px;
+}
+.settingIcon, .searchIcon {
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+.settingIcon:hover, .searchIcon:hover {
+  opacity: .5;
+}
+.settingSection {
+  background-color: white;
+  position: absolute;
+  top: 10vh;
+  left: 78%;
+  width: 300px;
+  transition: all .5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 20px;
+}
+.settingSection h2 {
+  color: black;
+}
+.settingSection .settingContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+.settingSection .settingContainer .black,.settingSection .settingContainer .white {
+  padding: 20px 20px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.settingContainer .black {
+  background-color: #171616;
+  border: none;
+}
+.settingContainer .white {
+  background-color: white;
+  border: 1px solid black;
+}
+.settingOptions .lang {
+  background-color: white;
+  cursor: pointer;
+  border: none;
+  padding: 12px 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+/* cursor */
+.cursor {
+  display: flex;
+  width: 300%;
+  height: 85vh;
+  overflow: hidden;
+
+
+}
+.cursor img{
+  width: 100%;
+  height: 100%;
+  object-fit: 100% 90%;
+  transition: all 2s ease-in-out                                                                                          ;
+}
+/* Series */
+.seriesSection {
+  display: flex;
+  flex-direction: column;
+}
+.category-container {
+  position: relative;
+}
+.title {
+  color: sienna;
+  text-indent: 20px;
+  font-size: 40px;
+  margin: 5px 20px;
+  
+}
+.seriesList {
+  width: 100%;
+  height: 70vh;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+
+.horror-arrowRight,  .horror-arrowLeft, .action-arrowRight,  .action-arrowLeft,
+.drama-arrowRight,  .drama-arrowLeft, .comedy-arrowRight,  .comedy-arrowLeft,
+.fantasy-arrowRight, .fantasy-arrowLeft, .romance-arrowRight, .romance-arrowLeft,
+.thriller-arrowRight, .thriller-arrowLeft, .mystery-arrowRight, .mystery-arrowLeft {
+  position:absolute;
+  width: 40px;
+  height: 250px;
+  z-index: 999;
+  cursor: pointer;
+  opacity: 1;
+  transition: all .5s ease-in-out;
+}
+.horror-arrowRight:hover, .action-arrowRight:hover, .drama-arrowRight:hover,
+.comedy-arrowRight:hover, .fantasy-arrowRight:hover, .romance-arrowRight:hover,
+.thriller-arrowRight:hover, .mystery-arrowRight:hover {
+  left: 98%;
+  opacity: .5;
+}
+.horror-arrowLeft:hover, .action-arrowLeft:hover, .drama-arrowLeft:hover,
+.comedy-arrowLeft:hover, .fantasy-arrowLeft:hover, .romance-arrowLeft:hover,
+.thriller-arrowLeft:hover, .mystery-arrowLeft:hover {
+  left: -.3%;
+  opacity: .5;
+}
+.horror-arrowRight, .action-arrowRight, .drama-arrowRight,.comedy-arrowRight, 
+.fantasy-arrowRight, .romance-arrowRight, .thriller-arrowRight, .mystery-arrowRight {
+  left: 99.5%;
+  top: 20%
+}
+.horror-arrowLeft, .action-arrowLeft, .drama-arrowLeft, .comedy-arrowLeft, 
+.fantasy-arrowLeft, .romance-arrowLeft, .thriller-arrowLeft, .mystery-arrowLeft {
+  left: -2%;
+  top: 20%
+}
+
+ .seriesContainer{
+  width: 35vh;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-b;
+  margin: 0 25px 0 25px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  position: relative;
+  margin-bottom: 50px;
+}
+ .seriesContainer:hover  .seriesImg {
+  border: 5px solid sienna;
+
+}
+ .seriesImg {
+  width: 250px;
+  height: 70%;
+  
+}
+ .seriesName {
+
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+} 
+.seriesContainer .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 10%;
+
+}
+.buttons .addToList, .buttons .removeFromList, .buttons .play {
+  margin: 0;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  border: none;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+}
+.buttons .addToList:hover, .buttons .removeFromList:hover, .buttons .play:hover {
+  opacity: .5;
+}
+  .playText, .addToListText {
+  position: absolute;
+  top: 74%;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  opacity: 1
+}
+.listItemContainer .addToListText, .listItemContainer .playText {
+  top: 75%
+}
+ .playText {
+  border-radius: 10px;
+  opacity: 0;
+  left: 63%
+}
+.addToListText {
+  border-radius: 10px;
+  opacity: 0;
+  left: 5%
+}
+
+.play:hover .playText, .addToList:hover .addToListText{
+  opacity: .8;
+}
+
+
+/* Footer */
+.footerSection {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+}
+.footerSection h2 {
+  font-size: 30px;
+}
+.footerSection ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin: 0;
+  padding: 0;
+}
+.footerSection li {
+  margin-bottom: 20px;
+}
+.footerSection a {
+  
+  text-decoration: none;
+  font-size: 20px;
+  transition: all .5s ease-in-out;
+}
+.footerSection a:hover {
+  opacity: .5;
+}
+.footerSection .sectionOne, .footerSection .sectionTwo, .sectionThree {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sectionThree {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sectionThree form {
+  display: flex;
+  align-items: center;
+}
+.sectionThree h3 {
+  font-size: 30px;
+}
+.sectionThree .emalInput {
+  padding: 10px 50px;
+  border: none;
+  border-radius: 5px;
+}
+.sectionThree .submitEmail {
+  padding: 8px 15px;
+  cursor: pointer;
+  background-color: sienna ;
+  border-radius: 5px;
+  font-size: 15px;
+}
+.sectionThree .socialImgs{
+  display: flex;
+  width: 30%;
+  justify-content: space-around;
+}
+.sectionThree .socialImgs img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.sectionThree .socialImgs img:hover {
+  opacity: .5;
+}
+/* List section  */
+.listSection {
+  width: 100%;
+  display: flex;
+  margin: 80px auto;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.emptyList {
+  width: 100%;
+  height: 50vh;
+  margin: 80px auto;
+  
+}
+.emptyList h2 {
+  text-align: center;
+  font-size: 40px;
+  margin: 200px 0px;
+}
+/* Single Series  */
+.singleSeries {
+  width: 100%;
+  height: 150vh;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.singleSeries .singleSeriesContainer {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.singleSeries .singleSeriesContainer .sectionOne {
+  width: 30%;
+  height: 80%;
+}
+.singleSeries .singleSeriesContainer .sectionTwo {
+  width: 60%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.singleSeries .singleSeriesContainer .sectionTwo h1 {
+  font-size: 50px;
+}
+.singleSeries .singleSeriesContainer .sectionTwo p {
+  font-size: 20px;
+  width: 95%;
+}
+.singleSeries .singleSeriesContainer .sectionOne img {
+  width: 100%;
+  height: 100%;
+
+}
+.video {
+  width: 90%;
+  height: 50%;
+  object-fit: cover;
+  display: block;
+  margin-top: 0;
+  border-radius: 20px;
+}
+
+/* Loading */
+.lds-spinner {
+  color: official;
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 250vh;
+  background-color: black;
+  z-index: 99999999;
+  overflow: hidden;
+}
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+  position: fixed;
+  left: 48%;
+  top: 40%;
+}
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background-color: sienna;
+
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@media (max-width: 500px) {
+  /* navbar */
+.navbarSection .rightSection {
+  width: 75%;
+  justify-content: space-around;
+}
+.navbarSection .leftSection {
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+
+}
+.naveLogo {
+  font-size: 20px;
+
+}
+.navbarSection .rightSection ul {
+  padding: 0;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+.navbarSection .rightSection ul li {
+  margin-right: 5px;
+}
+.rightSection .navLink {
+  font-size: 12px;
+  
+}
+.settingIcon, .searchIcon {
+  width: 20px;
+  height: 20px;
+}
+.settingIcon:hover, .searchIcon:hover {
+  opacity: 1;
+}
+.settingSection {
+  left: 50%;
+  top: 100%;
+  width: 50%;
+}
+.settingSection h2 {
+  font-size: 15px;
+}
+
+.settingSection .settingContainer .black,.settingSection .settingContainer .white {
+  padding: 10px 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+
+.settingOptions .lang {
+  padding: 10px 8px;
+  font-size: 10px;
+  font-weight: 400;
+}
+  /* Cursor */
+  .cursor {
+   height: 45vh;
+   
+  }
+  .cursor img{
+    width: 400px;
+    height: 50vh;
+    object-fit: cover;
+  
+  }
+  /* Series */
+
+  .title {
+    font-size: 25px;
+    margin: 10px 20px;
+    
+  }
+  .seriesList {
+    height: 40vh;
+    margin-bottom: 25px;
+  }
+  
+  
+  .horror-arrowRight,  .horror-arrowLeft, .action-arrowRight,  .action-arrowLeft,
+  .drama-arrowRight,  .drama-arrowLeft, .comedy-arrowRight,  .comedy-arrowLeft,
+  .fantasy-arrowRight, .fantasy-arrowLeft, .romance-arrowRight, .romance-arrowLeft,
+  .thriller-arrowRight, .thriller-arrowLeft, .mystery-arrowRight, .mystery-arrowLeft {
+    display: none;
+  }
+  
+  .seriesList .seriesContainer{
+    width: 20%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .seriesList .seriesContainer:hover {
+    border: none
+  }
+  .seriesList .seriesImg {
+    width: 100px;
+    height: 60%;
+  }
+  .seriesList .seriesName {
+    font-size: 10px;
+    width: 100%;
+  }  
+  .buttons .addToList, .buttons .removeFromList, .buttons .play {
+
+    width: 25px;
+    height: 25px;
+  }
+  .buttons .addToList:hover, .buttons .removeFromList:hover, .buttons .play:hover {
+    opacity: 1;
+  }
+  .play:hover .playText, .addToList:hover .addToListText{
+    display: none;
+  }
+  
+/*Footer*/
+.footerSection {
+  height: 100vh;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.footerSection h2 {
+  font-size: 20px;
+}
+.footerSection ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin: 0;
+  padding: 0;
+}
+
+.footerSection li {
+  margin-bottom: 12px;
+}
+.footerSection a {
+  font-size: 12px;
+}
+.footerSection a:hover {
+  opacity: 1;
+}
+.footerSection .sectionOne, .footerSection .sectionTwo, .sectionThree {
+  width: 50%;
+  height: 40%;
+  justify-content: space-around;
+}
+.sectionThree {
+  width: 100%;
+  height: 50%;
+}
+
+.sectionThree h3 {
+  font-size: 18px;
+}
+.sectionThree .emalInput {
+  padding: 10px 30px;
+ 
+}
+.sectionThree .submitEmail {
+  padding: 10px 12px;
+  border: none;
+  font-size: 12px;
+}
+
+
+/* Single Series  */
+.singleSeries {
+  height: 150vh;
+  justify-content: space-around;
+
+}
+.singleSeries .singleSeriesContainer {
+  width: 100%;
+  height: 50%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.singleSeries .singleSeriesContainer .sectionOne {
+  width: 100%;
+  height: 50%;
+}
+.singleSeries .singleSeriesContainer .sectionTwo {
+  width: 100%;
+  height: 40%;
+
+  margin-left: 5%;
+}
+.singleSeries .singleSeriesContainer .sectionTwo h1 {
+  font-size: 25px;
+}
+.singleSeries .singleSeriesContainer .sectionTwo p {
+  font-size: 15px;
+}
+
+.video {
+  width: 100%;
+  height: 30%;
+ 
+}
+/* List */
+.listSection {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Loading */
+.lds-spinner div {
+  left: 44%;
+  top: 40%;
+}
+}
